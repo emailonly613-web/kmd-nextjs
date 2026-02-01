@@ -1,4 +1,15 @@
 import Link from 'next/link'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Enterprise Device Security Solutions',
+  description: 'Custom device lockdown solutions for schools, camps, businesses, and institutions. Bulk deployment, fleet management, and volume pricing available.',
+  openGraph: {
+    title: 'Enterprise Device Security Solutions | KosherMyDevice',
+    description: 'Custom device lockdown solutions for schools, camps, businesses, and institutions.',
+    url: 'https://koshermydevice.com/enterprise',
+  },
+}
 
 const useCases = [
   { icon: '🎓', title: 'Schools & Yeshivos', color: 'blue', desc: 'Provide students with learning tools while eliminating distractions.', features: ['Grade-specific whitelists', 'Educational apps pre-installed', 'No browser or social media', 'Bulk deployment ready', 'Central management'] },

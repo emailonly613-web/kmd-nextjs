@@ -1,4 +1,49 @@
 import Link from 'next/link'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'KosherMyDevice | Digital Wellness & Device Security Solutions',
+  description: 'Take control of technology before it controls you. Enterprise-grade device lockdown, kosher phones, and digital wellness solutions for families, schools, and organizations.',
+  openGraph: {
+    title: 'KosherMyDevice | Digital Wellness & Device Security Solutions',
+    description: 'Take control of technology before it controls you. Enterprise-grade device lockdown and digital wellness solutions.',
+    url: 'https://koshermydevice.com',
+  },
+}
+
+// LocalBusiness Schema for homepage
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': 'https://koshermydevice.com/#localbusiness',
+  name: 'KosherMyDevice',
+  description: 'Device lockdown service and kosher phone solutions. Enterprise-grade security for families, schools, and organizations.',
+  url: 'https://koshermydevice.com',
+  telephone: '+1-718-971-4311',
+  email: 'info@koshermydevice.com',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Lakewood',
+    addressRegion: 'NJ',
+    postalCode: '08701',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 40.0960,
+    longitude: -74.2177,
+  },
+  openingHoursSpecification: [
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'], opens: '10:00', closes: '18:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Friday', opens: '10:00', closes: '14:00' },
+  ],
+  priceRange: '$$',
+  image: 'https://koshermydevice.com/og-image.png',
+  areaServed: {
+    '@type': 'Country',
+    name: 'United States',
+  },
+}
 
 const stats = [
   { number: '57%', label: 'of adults admit phone addiction' },
@@ -51,6 +96,10 @@ const comparison = [
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
       {/* Hero */}
       <section className="pt-32 pb-20 bg-gradient-to-b from-gray-50 to-white text-center">
         <div className="max-w-5xl mx-auto px-6">

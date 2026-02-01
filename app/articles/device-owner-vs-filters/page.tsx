@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata = {
   title: 'Device Owner Mode vs Filters: Why OS-Level Protection Wins | KosherMyDevice',
@@ -12,6 +13,11 @@ export const metadata = {
 export default function DeviceOwnerVsFiltersPage() {
   return (
     <article className="pt-24">
+      <ArticleSchema
+        title="Device Owner Mode vs Filters: Why OS-Level Protection Wins"
+        description="Device Owner mode Android protection beats DNS filters and parental control apps. Learn why system-level security is the only bypass-proof solution."
+        slug="device-owner-vs-filters"
+      />
       <header className="bg-gray-50 py-12">
         <div className="max-w-3xl mx-auto px-6">
           <nav className="flex gap-2 text-sm text-gray-400 mb-6">

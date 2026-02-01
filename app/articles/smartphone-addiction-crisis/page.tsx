@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata = {
   title: 'The Smartphone Addiction Crisis: Phone Addiction Statistics 2026 | KosherMyDevice',
@@ -12,6 +13,11 @@ export const metadata = {
 export default function SmartphoneAddictionCrisisPage() {
   return (
     <article className="pt-24">
+      <ArticleSchema
+        title="The Smartphone Addiction Crisis: What Phone Addiction Statistics Actually Reveal"
+        description="57% of Americans admit to phone addiction. Discover the latest phone addiction statistics, research on smartphone dependency, and evidence-based solutions."
+        slug="smartphone-addiction-crisis"
+      />
       <header className="bg-gray-50 py-12">
         <div className="max-w-3xl mx-auto px-6">
           <nav className="flex gap-2 text-sm text-gray-400 mb-6">

@@ -1,13 +1,130 @@
 import Link from 'next/link'
+import { Metadata } from 'next'
 
-export const metadata = {
-  title: 'Device Lockdown Service - $125 One-Time | KosherMyDevice',
+export const metadata: Metadata = {
+  title: 'Device Lockdown Service - $125 One-Time',
   description: 'Professional Device Owner installation for $125. Unbypassable security, Factory Reset Protection, app whitelist configuration, 30-day support included.',
+  openGraph: {
+    title: 'Device Lockdown Service - $125 One-Time | KosherMyDevice',
+    description: 'Transform any Android device into an unbypassable, secure phone. One-time setup, permanent protection.',
+    url: 'https://koshermydevice.com/service',
+  },
+}
+
+// Service Schema
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Device Lockdown Service',
+  description: 'Professional Device Owner installation that transforms any Android device into an unbypassable, secure phone with Factory Reset Protection and custom app whitelisting.',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'KosherMyDevice',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Lakewood',
+      addressRegion: 'NJ',
+      addressCountry: 'US',
+    },
+    telephone: '+1-718-971-4311',
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'United States',
+  },
+  offers: {
+    '@type': 'Offer',
+    price: '125',
+    priceCurrency: 'USD',
+    priceValidUntil: '2027-12-31',
+    availability: 'https://schema.org/InStock',
+  },
+  serviceType: 'Device Security Configuration',
+}
+
+// FAQ Schema
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What devices do you support?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Any Android device running Android 6.0 (Marshmallow) or higher. This includes Samsung, Google Pixel, Motorola, OnePlus, and most other Android phones.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can the user bypass this?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. Device Owner mode is OS-level control. There is no app to uninstall, no VPN to use, no workaround. The only way to remove it requires admin credentials.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What if they factory reset?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Factory Reset Protection kicks in. The device requires our authorization to be set up again. Without credentials, the device is unusable.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need a monthly subscription?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. The $125 is a one-time fee for setup. There are no mandatory monthly charges. Optional remote monitoring is available for $10/month if desired.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I change the app whitelist later?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Bring the device back or schedule a remote session. The first 30 days of changes are included. After that, a small fee may apply for extensive changes.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you support iPhone?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Unfortunately, Apple does not allow Device Owner-style control. Our service is Android only. For iOS, Apple's Screen Time is the best available option, though it has known bypasses.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What apps can I whitelist?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Almost any app: phone, texts, email, maps, banking, specific messaging apps, educational apps, work apps. We configure exactly what you need. No browser or app store if you don't want them.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does setup take?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Most devices are completed within 1-2 hours. Complex configurations may take longer. We'll give you an estimate when you contact us.",
+      },
+    },
+  ],
 }
 
 export default function ServicePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       {/* Hero */}
       <section className="pt-32 pb-16 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
